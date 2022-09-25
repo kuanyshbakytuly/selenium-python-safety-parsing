@@ -46,7 +46,7 @@ conn = sql.create_engine(url=f"mssql+pymssql://{user}:{password}@{server}:{port}
 ua = UserAgent(verify_ssl=False)
 a = ua.random
 user_agent = ua.random
-ser = Service("/Users/kuanyshbakytuly/PycharmProjects/pythonProject4/chromedriver")
+ser = Service("chromedriver")
 chrome_options = Options()
 chrome_options.add_experimental_option('w3c', True)
 chrome_options.add_argument(f'user-agent={user_agent}')
