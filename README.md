@@ -2,14 +2,24 @@
 Parsing the advertisements of the map using Selenium
 
 1-Step: 
-import necessary libraries: 
+import necessary libraries
+
+installing:
+1:
 pip install pandas
+2:
 pip install selenium
+3:
 pip install UserAgent
+4:
 pip install pymssql
+5:
 pip install sqlalchemy 
+6:
 pip install urllib3
+7:
 pip install warnings
+8:
 pip install sleep
 
 2-Step:
