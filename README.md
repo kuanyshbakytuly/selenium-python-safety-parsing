@@ -2,7 +2,15 @@
 Parsing the advertisements of the map using Selenium
 
 1-Step:
-import necessary libraries: pandas, selenium, UserAgent, pymssql(any sql drivers), sqlalchemy, urllib3, warnings, sleep
+import necessary libraries: 
+'''pip install pandas'''
+pip install selenium
+pip install UserAgent
+pip install pymssql
+pip install sqlalchemy 
+pip install urllib3
+pip install warnings
+pip install sleep
 
 2-Step:
 Finding weak points of the site. For example, clickable areas that have many needed the pieces of data. 
