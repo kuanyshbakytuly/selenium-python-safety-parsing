@@ -19,21 +19,11 @@ warnings.filterwarnings('ignore')
 urllib3.disable_warnings()
 pool_timeout = 30
 
-headers = {
-    'Host': 'data.egov.kz',
-    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Connection': 'keep-alive',
-    'Cookie': 'lttping=1624524813693; _ga=GA1.2.119799985.1611131318; _ym_uid=16111313181057905347; _ym_d=1611131318; egovLang=ru; OPENDATA_PORTAL_SESSION=f0ef007816d35fcffd1ba6c7acbeda4803c47ed1-___AT=7974c2a8f0e554ef0b9822ffe585b67823bf7a85&___TS=1624528417591; cookiesession1=678B76A8HIOPQRSTUVWXYZABCEFGEF57; _gid=GA1.2.1616680045.1624524465; _ym_isad=1; _ym_visorc=w',
-    'Upgrade-Insecure-Requests': '1',
-    'Cache-Control': 'max-age=0',
-}
+headers = {}
 
-user = 'SA'
-password = 'reallyStrongPwd123'
-server = '127.0.0.1'
+user = ''
+password = ''
+server = ''
 port = 1433
 database = 'AZURE'
 conn = sql.create_engine(url=f"mssql+pymssql://{user}:{password}@{server}:{port}/{database}", encoding='utf-8')
@@ -41,7 +31,7 @@ conn = sql.create_engine(url=f"mssql+pymssql://{user}:{password}@{server}:{port}
 
 def recieveing_data_fromsql():
     quore = conn.execute(
-        "select * from krisha_id;")
+        "select a.id from krisha_id as a left join krishaaa as b on a.id = b.id where b.id is NULL order by 1;")
     id_areas = []
     for i in quore:
         id_areas.append(str(i)[2:-3])
