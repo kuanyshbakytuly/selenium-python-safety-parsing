@@ -13,8 +13,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver import ActionChains
 from fake_useragent import UserAgent
 import re
-from Prediction_Images import Prediction_Images
-from Prediction_squares import Prediction_speech
+import prediction
 
 warnings.filterwarnings('ignore')
 urllib3.disable_warnings()
@@ -172,10 +171,10 @@ for i in data_id:
                         captcha_condition = driver.find_element(By.XPATH,
                                                                  '/html/body/div/div/div[2]/div[1]/div[1]/div').text
                         if bool(re.match('Select all images with...', captcha_condition)):
-                            captcha = Prediction_Images(driver)
+                            captcha = prediction.Prediction_Images(driver)
                             captcha.resulta()
                         elif bool(re.match('Select all squares with...', captcha_condition)):
-                            captcha = Prediction_speech(driver)
+                            captcha = prediction.Prediction_speech(driver)
                             captcha.predicting()
                     except:
                         pass
